@@ -62,6 +62,8 @@ Some actions have non-standard mappings:
 
 ### Control Flow
 
+> **See [CONTROL_FLOW.md](CONTROL_FLOW.md)** for detailed patterns including `GroupingIdentifier` and `WFControlFlowMode` usage.
+
 | Identifier | Class | Description |
 |------------|-------|-------------|
 | `repeat.count` | WFRepeatAction | Repeat N times |

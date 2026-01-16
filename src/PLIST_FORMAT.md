@@ -8,6 +8,9 @@ Complete documentation of the `.shortcut` file structure.
 - [PARAMETER_TYPES.md](./PARAMETER_TYPES.md) - All parameter value types
 - [VARIABLES.md](./VARIABLES.md) - Variable references and outputs
 - [CONTROL_FLOW.md](./CONTROL_FLOW.md) - Conditionals, loops, menus
+- [VALIDATION.md](./VALIDATION.md) - Pre-output checklist
+- [TESTING.md](./TESTING.md) - Testing procedures
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Common problems and solutions
 
 ## Root Structure
 
@@ -109,6 +112,18 @@ A `.shortcut` file is a binary plist (can be written as XML, then converted). Th
 | Folder | 59495 | Folder icon |
 | Play | 59477 | Play button |
 | Message | 59412 | Message bubble |
+| Clock | 59470 | Time/clock |
+| Calendar | 59453 | Calendar |
+| Camera | 59467 | Camera |
+| Music | 61441 | Music note |
+| Mail | 59411 | Email |
+| Phone | 59409 | Phone |
+| Safari | 59500 | Safari/web |
+| Map | 59457 | Location/map |
+| Bell | 59415 | Notification |
+| Lightning | 59466 | Quick action |
+| Pencil | 59419 | Edit/write |
+| Trash | 59507 | Delete |
 
 ### Color Values
 
@@ -117,11 +132,14 @@ Colors are ARGB integers. Common values:
 | Color | Value | Description |
 |-------|-------|-------------|
 | Blue | 4282601983 | Default blue |
-| Red | 4282601983 | Red |
+| Red | 4271458559 | Red |
 | Green | 4292093695 | Green |
-| Orange | 4294967295 | Orange |
+| Orange | 4294881024 | Orange |
 | Purple | 4285887861 | Purple |
+| Pink | 4290166783 | Pink |
+| Yellow | 4294967040 | Yellow |
 | Gray | 2846468607 | Gray |
+| Teal | 4278233855 | Teal |
 
 ## Action Structure
 

@@ -153,6 +153,11 @@ For complete documentation, see:
 - [FILTERS.md](FILTERS.md) - Content filters for Find/Filter actions (photos, files, etc.)
 - [EXAMPLES.md](EXAMPLES.md) - Complete working examples
 
+**Quality assurance:**
+- [VALIDATION.md](VALIDATION.md) - **REQUIRED** pre-output checklist
+- [TESTING.md](TESTING.md) - Testing procedures
+- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common problems and solutions
+
 ## Signing Shortcuts
 
 Shortcuts MUST be signed before they can be imported. Use the macOS `shortcuts` CLI:
@@ -177,8 +182,21 @@ The signing process:
 3. **Build action array** - Create each action dictionary with identifier and parameters
 4. **Wire variable references** - Connect outputs to inputs using `OutputUUID`
 5. **Wrap in plist** - Add the root structure with icon, name, version
-6. **Write to file** - Save as `.shortcut` (XML plist format is fine)
-7. **Sign** - Run `shortcuts sign` to make it importable
+6. **VALIDATE** - Complete the [VALIDATION.md](VALIDATION.md) checklist before outputting
+7. **Write to file** - Save as `.shortcut` (XML plist format is fine)
+8. **Sign** - Run `shortcuts sign` to make it importable
+9. **Test** - Validate XML, verify signing, test import (see [TESTING.md](TESTING.md))
+
+## Before Outputting Code
+
+**MANDATORY**: Before writing any shortcut plist, verify:
+
+1. **UUIDs**: All uppercase, no duplicates, all references valid
+2. **Positions**: Manually count characters for every `attachmentsByRange` position
+3. **Control flow**: Every start (mode 0) has matching end (mode 2), modes use `<integer>`
+4. **Parameters**: Correct serialization type, correct parameter names
+
+See [VALIDATION.md](VALIDATION.md) for the complete checklist.
 
 ## Key Rules
 

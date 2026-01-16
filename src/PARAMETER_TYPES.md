@@ -124,9 +124,15 @@ Used for text fields that can contain embedded variables:
 ```
 
 Key points:
-- `￼` (U+FFFC) is the placeholder character
+- `￼` (U+FFFC) is the placeholder character marking where variables are inserted
 - `{0, 1}` means "at position 0, length 1"
 - Multiple variables: `"Hello ￼, you have ￼ messages"` with `{6, 1}` and `{22, 1}`
+
+**The Placeholder Character `￼`**:
+- Unicode: U+FFFC (Object Replacement Character)
+- Decimal: 65532
+- In XML, you can use the literal character or escape it: `&#xFFFC;` or `&#65532;`
+- **See [VARIABLES.md](VARIABLES.md)** for detailed position calculation rules
 
 ---
 

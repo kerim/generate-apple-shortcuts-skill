@@ -65,6 +65,39 @@ Examples:
 - `{5, 1}` - Variable at position 5
 - `{10, 1}` - Variable at position 10
 
+### Position Calculation Rules
+
+**Rule 1**: Count all characters from position 0 up to (but not including) the placeholder.
+
+**Rule 2**: For multiple placeholders, count everything including previous placeholders.
+
+**Step-by-step calculation:**
+```
+String: "Hello, ￼!"
+         0123456 7
+
+Position of ￼ = 7 (count "Hello, " = 7 chars)
+Result: {7, 1}
+```
+
+**Multiple placeholders:**
+```
+String: "Name: ￼, Age: ￼"
+         012345 6 789...
+
+Step 1: First ￼ position
+  - "Name: " = 6 chars
+  - First ￼ at position 6 → {6, 1}
+
+Step 2: Second ￼ position
+  - "Name: " = 6 chars
+  - First ￼ = 1 char (position 6)
+  - ", Age: " = 7 chars (positions 7-13)
+  - Second ￼ at position 14 → {14, 1}
+```
+
+**Common mistake**: Forgetting to count newlines. Each `\n` counts as 1 character.
+
 ---
 
 ## The Placeholder Character
@@ -97,10 +130,11 @@ Use when the parameter is text that may contain variable references:
     <key>Value</key>
     <dict>
         <key>string</key>
+        <!-- "The result is: " = 15 chars -->
         <string>The result is: ￼</string>
         <key>attachmentsByRange</key>
         <dict>
-            <key>{16, 1}</key>
+            <key>{15, 1}</key>
             <dict>
                 <key>OutputUUID</key>
                 <string>11111111-1111-1111-1111-111111111111</string>
@@ -264,6 +298,7 @@ When referencing action outputs, use these common `OutputName` values:
             <key>Value</key>
             <dict>
                 <key>string</key>
+                <!-- "Translate this to French: " = 26 chars -->
                 <string>Translate this to French: ￼</string>
                 <key>attachmentsByRange</key>
                 <dict>
@@ -356,4 +391,6 @@ When a parameter contains multiple variable references:
 </dict>
 ```
 
-Note: Position counting includes all characters including the placeholder `￼`.
+**Position verification:**
+- "Name: " = 6 chars → first ￼ at `{6, 1}`
+- "Name: ￼, Age: " = 6 + 1 + 7 = 14 chars → second ￼ at `{14, 1}`

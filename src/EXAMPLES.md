@@ -2,6 +2,14 @@
 
 Copy-paste ready examples that can be signed and imported.
 
+## Position Calculation Reference
+
+When using `attachmentsByRange`, positions are 0-indexed character counts:
+- `{0, 1}` = placeholder at the very start
+- `{7, 1}` = placeholder at position 7 (after 7 characters)
+
+**How to count**: Count all characters (including spaces, newlines) before the `￼` placeholder.
+
 ## Example 1: Hello World
 
 The simplest shortcut - displays "Hello World!".
@@ -118,6 +126,7 @@ Asks user for their name and displays a greeting.
                     <dict>
                         <key>attachmentsByRange</key>
                         <dict>
+                            <!-- Position 7: "Hello, " = 7 chars -->
                             <key>{7, 1}</key>
                             <dict>
                                 <key>OutputName</key>
@@ -461,7 +470,8 @@ Gets current weather and uses AI to generate a friendly report.
                     <dict>
                         <key>attachmentsByRange</key>
                         <dict>
-                            <key>{56, 1}</key>
+                            <!-- Position 54: "Generate a friendly weather report based on this data:\n" = 54 chars -->
+                            <key>{54, 1}</key>
                             <dict>
                                 <key>OutputName</key>
                                 <string>Weather Conditions</string>
