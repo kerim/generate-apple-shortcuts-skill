@@ -11,44 +11,12 @@ A Claude Code skill that enables AI-assisted generation of macOS/iOS Shortcuts. 
 
 ## Installation
 
-### 1. Clone this repository
-
 ```bash
 cd ~/.claude/skills
 git clone https://github.com/kerim/generate-apple-shortcuts-skill.git shortcuts-generator
 ```
 
-### 2. Copy the skill files
-
-```bash
-cp ~/.claude/skills/shortcuts-generator/src/* ~/.claude/skills/shortcuts-generator/
-```
-
-Or manually copy the contents of `src/` to `~/.claude/skills/shortcuts-generator/`.
-
-### 3. Verify the installation
-
-Your directory structure should include:
-
-```
-~/.claude/skills/shortcuts-generator/
-├── SKILL.md              # Required - skill definition
-├── ACTIONS.md            # 427 WF*Action identifiers
-├── APPINTENTS.md         # 728 AppIntent actions (iOS 16+)
-├── CONTROL_FLOW.md       # Repeat, Conditional, Menu patterns
-├── EXAMPLES.md           # Complete working examples
-├── FILTERS.md            # Content filters for Find/Filter actions
-├── PARAMETER_TYPES.md    # Parameter serialization formats
-├── PLIST_FORMAT.md       # Complete plist structure
-├── VARIABLES.md          # UUID-based variable system
-├── VALIDATION.md         # Pre-output checklist
-├── TESTING.md            # Testing procedures
-└── TROUBLESHOOTING.md    # Common problems and solutions
-```
-
-### 4. Restart Claude Code
-
-The skill will be automatically detected on the next conversation.
+Restart Claude Code. The skill will be automatically detected.
 
 ## Usage
 
@@ -61,8 +29,6 @@ Once installed, ask Claude Code to create a shortcut:
 Claude will generate the plist XML, write it to a `.shortcut` file, and sign it so you can import it directly into the Shortcuts app.
 
 ## Documentation
-
-All skill documentation lives in `src/`:
 
 | File | Description |
 |------|-------------|
