@@ -1,5 +1,9 @@
 # Shortcuts Generator Skill for Claude Code
 
+> **Warning: Work in Progress**
+>
+> This skill does not currently produce valid code reliably. Generated shortcuts may fail to import or show "Unknown Action" errors. Use with caution and expect to debug output manually.
+
 A Claude Code skill that enables AI-assisted generation of macOS/iOS Shortcuts. Create valid `.shortcut` plist files that can be signed and imported into Apple's Shortcuts app.
 
 ## Features
