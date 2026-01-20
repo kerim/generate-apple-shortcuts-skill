@@ -15,12 +15,20 @@ A Claude Code skill that enables AI-assisted generation of macOS/iOS Shortcuts. 
 
 ## Installation
 
-```bash
-cd ~/.claude/skills
-git clone https://github.com/kerim/generate-apple-shortcuts-skill.git shortcuts-generator
-```
+### For Claude Code
 
-Restart Claude Code. The skill will be automatically detected.
+1. Clone or download this repository
+2. Copy the `skill/` folder to your Claude Code skills directory:
+   ```bash
+   cp -r skill ~/.claude/skills/generate-shortcuts-skill
+   ```
+3. Restart Claude Code to load the skill
+
+### Alternative: Direct Download
+
+1. Download just the `skill/` folder from this repository
+2. Rename it to `generate-shortcuts-skill` and place it at `~/.claude/skills/generate-shortcuts-skill/`
+3. Restart Claude Code
 
 ## Usage
 
